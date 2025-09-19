@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DashboardProject
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# angular-bindings-dashboard
+Este repositorio sirve como ejercicio práctico para dominar conceptos fundamentales como el Data Binding (unidireccional y bidireccional), la comunicación entre componentes con @Input y @Output, y la creación de una interfaz de usuario interactiva y funcional. Ideal para fortalecer habilidades de desarrollo front-end.
+>>>>>>> d5d88e91e5d0d0c7b6a2cf4cd7d6e9f5cb0eb413
