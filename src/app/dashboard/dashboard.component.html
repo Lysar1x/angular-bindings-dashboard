@@ -1,8 +1,17 @@
-<h1>Panel de Clientes</h1>
 <div class="dashboard-container">
-  <app-client-list
-    [clients]="clients"
-    (clientSelected)="onClientSelected($event)"
-  ></app-client-list>
-  <app-client-details *ngIf="selectedClient" [client]="selectedClient"></app-client-details>
+  <h1>Panel de Clientes</h1>
+
+  <div class="client-actions-section">
+    <h2>Añadir Nuevo Cliente</h2>
+    <input type="text" [(ngModel)]="newClientName" placeholder="Nombre del nuevo cliente" />
+    <button (click)="addClient()">Añadir Cliente</button>
+  </div>
+
+  <div class="client-data-section">
+    <app-client-list
+      [clients]="clients"
+      (clientSelected)="onClientSelected($event)"
+    ></app-client-list>
+    <app-client-details *ngIf="selectedClient" [client]="selectedClient"></app-client-details>
+  </div>
 </div>

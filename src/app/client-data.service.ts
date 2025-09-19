@@ -31,4 +31,7 @@ export class ClientDataService {
   getClients(): Client[] {
     return this.clients;
   }
+  addClient(client: Client): void {
+    this.clients.push(client);
+  }
 }
