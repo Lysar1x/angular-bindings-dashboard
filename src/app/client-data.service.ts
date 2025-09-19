@@ -24,15 +24,10 @@ export class ClientDataService {
       email: 'demetriusp@example.com',
       status: 'Activo',
     },
-    {
-      id: 4,
-      name: 'Hermia Chen',
-      email: 'hermiac@example.com',
-      status: 'Pendiente',
-    },
   ];
 
   constructor() {}
+
   getClients(): Client[] {
     return this.clients;
   }

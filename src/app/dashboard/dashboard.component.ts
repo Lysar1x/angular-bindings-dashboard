@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientDataService } from '../client-data-service';
+import { ClientDataService } from '../client-data.service';
 import { Client } from '../client.interface';
-import { ClientListComponent } from '../client-list.component/client-list.component';
+import { ClientListComponent } from '../client-list/client-list.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +13,7 @@ import { ClientListComponent } from '../client-list.component/client-list.compon
 export class DashboardComponent implements OnInit {
   clients: Client[] = [];
 
-  constructor(private clientDataService: ClientDataService) {} //es la inyección de dependencias. Le dice a Angular: "Dame una instancia de ClientDataService".
+  constructor(private clientDataService: ClientDataService) {}
 
   ngOnInit(): void {
     this.clients = this.clientDataService.getClients();
