@@ -12,12 +12,15 @@ import { CommonModule } from '@angular/common';
 export class ClientListComponent implements OnInit {
   @Input() clients: Client[] = [];
   @Output() clientSelected = new EventEmitter<Client>();
-
+  @Output() clientDeleted = new EventEmitter<number>();
   constructor() {}
 
   ngOnInit(): void {}
 
   selectClient(client: Client): void {
     this.clientSelected.emit(client);
+  }
+  deleteClient(id: number): void {
+    this.clientDeleted.emit(id); // Añade este método
   }
 }

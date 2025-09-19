@@ -42,4 +42,9 @@ export class DashboardComponent implements OnInit {
       this.newClientName = '';
     }
   }
+
+  onClientDeleted(id: number): void {
+    this.clientDataService.deleteClient(id);
+    this.clients = this.clientDataService.getClients();
+  }
 }

@@ -34,4 +34,7 @@ export class ClientDataService {
   addClient(client: Client): void {
     this.clients.push(client);
   }
+  deleteClient(id: number): void {
+    this.clients = this.clients.filter((client) => client.id !== id);
+  }
 }

@@ -3,6 +3,7 @@
     <h3>{{ client.name }}</h3>
     <p>Email: {{ client.email }}</p>
     <p>Estatus: {{ client.status }}</p>
+    <button (click)="$event.stopPropagation(); deleteClient(client.id)">Eliminar</button>
   </div>
 </div>
 <div *ngIf="clients.length === 0">

@@ -11,6 +11,7 @@
     <app-client-list
       [clients]="clients"
       (clientSelected)="onClientSelected($event)"
+      (clientDeleted)="onClientDeleted($event)"
     ></app-client-list>
     <app-client-details *ngIf="selectedClient" [client]="selectedClient"></app-client-details>
   </div>
