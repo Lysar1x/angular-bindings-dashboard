@@ -1,2 +1,8 @@
 <h1>Panel de Clientes</h1>
-<app-client-list [clients]="clients"></app-client-list>
+<div class="dashboard-container">
+  <app-client-list
+    [clients]="clients"
+    (clientSelected)="onClientSelected($event)"
+  ></app-client-list>
+  <app-client-details *ngIf="selectedClient" [client]="selectedClient"></app-client-details>
+</div>

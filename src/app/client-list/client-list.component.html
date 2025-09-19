@@ -1,5 +1,5 @@
 <div *ngIf="clients.length > 0">
-  <div *ngFor="let client of clients">
+  <div *ngFor="let client of clients" (click)="selectClient(client)">
     <h3>{{ client.name }}</h3>
     <p>Email: {{ client.email }}</p>
     <p>Estatus: {{ client.status }}</p>

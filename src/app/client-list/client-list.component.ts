@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Client } from '../client.interface';
 import { CommonModule } from '@angular/common';
 
@@ -11,8 +11,13 @@ import { CommonModule } from '@angular/common';
 })
 export class ClientListComponent implements OnInit {
   @Input() clients: Client[] = [];
+  @Output() clientSelected = new EventEmitter<Client>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectClient(client: Client): void {
+    this.clientSelected.emit(client);
+  }
 }
