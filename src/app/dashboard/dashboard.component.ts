@@ -23,6 +23,6 @@ export class DashboardComponent implements OnInit {
   }
 
   onClientSelected(client: Client): void {
-    this.selectedClient = client; // Guarda el cliente seleccionado
+    this.selectedClient = client;
   }
 }
