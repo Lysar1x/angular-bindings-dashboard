@@ -17,5 +17,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.clients = this.clientDataService.getClients();
+    console.log('Clientes obtenidos:', this.clients);
   }
 }
