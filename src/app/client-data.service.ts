@@ -37,4 +37,10 @@ export class ClientDataService {
   deleteClient(id: number): void {
     this.clients = this.clients.filter((client) => client.id !== id);
   }
+  updateClient(updatedClient: Client): void {
+    const index = this.clients.findIndex((client) => client.id === updatedClient.id);
+    if (index !== -1) {
+      this.clients[index] = updatedClient;
+    }
+  }
 }

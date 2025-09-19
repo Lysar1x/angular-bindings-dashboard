@@ -4,6 +4,7 @@
     <p>Email: {{ client.email }}</p>
     <p>Estatus: {{ client.status }}</p>
     <button (click)="$event.stopPropagation(); deleteClient(client.id)">Eliminar</button>
+    <button (click)="$event.stopPropagation(); editClient(client)">Editar</button>
   </div>
 </div>
 <div *ngIf="clients.length === 0">

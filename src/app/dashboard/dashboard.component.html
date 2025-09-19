@@ -1,10 +1,20 @@
 <div class="dashboard-container">
   <h1>Panel de Clientes</h1>
 
-  <div class="client-actions-section">
+  <div *ngIf="!editingClient" class="client-actions-section">
     <h2>Añadir Nuevo Cliente</h2>
     <input type="text" [(ngModel)]="newClientName" placeholder="Nombre del nuevo cliente" />
     <button (click)="addClient()">Añadir Cliente</button>
+  </div>
+
+  <div *ngIf="editingClient" class="client-edit-form">
+    <h2>Editar Cliente</h2>
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="editingClient.name" />
+    <label>Email:</label>
+    <input type="text" [(ngModel)]="editingClient.email" />
+    <button (click)="saveChanges()">Guardar Cambios</button>
+    <button (click)="cancelEdit()">Cancelar</button>
   </div>
 
   <div class="client-data-section">
@@ -12,6 +22,7 @@
       [clients]="clients"
       (clientSelected)="onClientSelected($event)"
       (clientDeleted)="onClientDeleted($event)"
+      (clientToEdit)="onClientToEdit($event)"
     ></app-client-list>
     <app-client-details *ngIf="selectedClient" [client]="selectedClient"></app-client-details>
   </div>

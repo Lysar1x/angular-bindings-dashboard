@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   clients: Client[] = [];
   selectedClient: Client | null = null;
   newClientName: string = '';
+  editingClient: Client | null = null;
 
   constructor(private clientDataService: ClientDataService) {}
 
@@ -46,5 +47,20 @@ export class DashboardComponent implements OnInit {
   onClientDeleted(id: number): void {
     this.clientDataService.deleteClient(id);
     this.clients = this.clientDataService.getClients();
+  }
+  onClientToEdit(client: Client): void {
+    this.editingClient = { ...client }; // Crea una copia del cliente para evitar modificar el original
+  }
+
+  saveChanges(): void {
+    if (this.editingClient) {
+      this.clientDataService.updateClient(this.editingClient);
+      this.clients = this.clientDataService.getClients();
+      this.editingClient = null;
+    }
+  }
+
+  cancelEdit(): void {
+    this.editingClient = null;
   }
 }

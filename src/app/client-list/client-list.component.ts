@@ -13,6 +13,8 @@ export class ClientListComponent implements OnInit {
   @Input() clients: Client[] = [];
   @Output() clientSelected = new EventEmitter<Client>();
   @Output() clientDeleted = new EventEmitter<number>();
+  @Output() clientToEdit = new EventEmitter<Client>();
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -21,6 +23,9 @@ export class ClientListComponent implements OnInit {
     this.clientSelected.emit(client);
   }
   deleteClient(id: number): void {
-    this.clientDeleted.emit(id); // Añade este método
+    this.clientDeleted.emit(id);
+  }
+  editClient(client: Client): void {
+    this.clientToEdit.emit(client);
   }
 }
