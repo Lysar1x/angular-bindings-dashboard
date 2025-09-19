@@ -1,12 +1,13 @@
 <div *ngIf="clients.length > 0">
-  <div *ngFor="let client of clients" (click)="selectClient(client)">
+  <div
+    *ngFor="let client of clients"
+    (click)="selectClient(client)"
+    [ngClass]="{ 'selected-client': client === selectedClient }"
+  >
     <h3>{{ client.name }}</h3>
     <p>Email: {{ client.email }}</p>
     <p>Estatus: {{ client.status }}</p>
     <button (click)="$event.stopPropagation(); deleteClient(client.id)">Eliminar</button>
     <button (click)="$event.stopPropagation(); editClient(client)">Editar</button>
   </div>
-</div>
-<div *ngIf="clients.length === 0">
-  <p>No se encontraron clientes.</p>
 </div>

@@ -14,6 +14,7 @@ export class ClientListComponent implements OnInit {
   @Output() clientSelected = new EventEmitter<Client>();
   @Output() clientDeleted = new EventEmitter<number>();
   @Output() clientToEdit = new EventEmitter<Client>();
+  @Input() selectedClient: Client | null = null;
 
   constructor() {}
 

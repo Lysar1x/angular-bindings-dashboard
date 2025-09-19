@@ -20,6 +20,7 @@
   <div class="client-data-section">
     <app-client-list
       [clients]="clients"
+      [selectedClient]="selectedClient"
       (clientSelected)="onClientSelected($event)"
       (clientDeleted)="onClientDeleted($event)"
       (clientToEdit)="onClientToEdit($event)"
